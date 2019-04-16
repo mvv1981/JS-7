@@ -12,11 +12,11 @@ module.exports = function (date) {
         hour: '2-digit',
         minute: '2-digit'
     };
-    var calculateDateTime = {
+    return {
         dateTime: date,
         add: function (value, unit) {
             if (value < 0) {
-                throw new TypeError('Величина сдвига времени заданы некорректно')
+                throw new TypeError('Величина сдвига времени задана некорректно')
             }
             else {
                 switch (unit) {
@@ -46,7 +46,7 @@ module.exports = function (date) {
         },
         subtract: function (value, unit) {
             if (value < 0) {
-                throw new TypeError('Величина сдвига времени заданы некорректно')
+                throw new TypeError('Величина сдвига времени задана некорректно')
             }
             else {
                 switch (unit) {
@@ -75,5 +75,4 @@ module.exports = function (date) {
             return this
         }
     }
-    return calculateDateTime
 };
